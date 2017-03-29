@@ -3,8 +3,10 @@ export const stateDesign = {
     user: null,
     searchForm: {
       searchCriteria: 'streamer',
+      placeholder: 'Enter streamer',
       searchText: '',
-      searchResults: []
+      searchResults: [],
+      currentResultsPosition: null
     },
     activeChannelsList: {
       items: [],

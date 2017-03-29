@@ -1,0 +1,25 @@
+.active-channel .image-cropper {
+  width: 165px;
+  height: 100px;
+  position: relative;
+  top: -6px;
+  left: -10px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.active-channel {
+  line-height: 0.9;
+}
+
+.active-channel img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+.active-channels-list {
+  height: 650px;
+  overflow: scroll;
+}
