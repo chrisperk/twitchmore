@@ -1,10 +1,7 @@
 import React, {PropTypes} from 'react';
 import {
   Row,
-  Col,
-  // Button,
-  // ListGroup,
-  // ListGroupItem
+  Col
 } from 'react-bootstrap';
 import './ChannelDisplaySpace.css';
 
