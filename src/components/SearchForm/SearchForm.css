@@ -1,3 +1,11 @@
+.search-component {
+  height: 100vh;
+}
+
+.search-form {
+  height: 23%;
+}
+
 .search-result {
   line-height: 0.9;
 }
@@ -20,6 +28,6 @@
 }
 
 .search-results-list {
-  height: 800px;
+  height: 77%;
   overflow: scroll;
 }

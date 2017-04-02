@@ -12,6 +12,9 @@ const ActiveChannelsList = props => {
   return (
     <Col md={2}>
       <ListGroup className="active-channels-list">
+        <h1>
+          Active Channels
+        </h1>
         {props.activeChannels.map(activeChannel => {
           if (activeChannel.channel) {
             return (

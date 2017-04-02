@@ -11,8 +11,8 @@ import './SearchForm.css';
 
 const SearchForm = props => {
   return (
-    <Col md={2}>
-      <form onSubmit={
+    <Col className="search-component" md={2}>
+      <form className="search-form" onSubmit={
         event => props.handleSearchSubmit(event, props.searchCriteria, props.searchText)
       }>
         <FormGroup>
