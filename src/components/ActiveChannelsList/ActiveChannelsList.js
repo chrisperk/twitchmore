@@ -10,7 +10,7 @@ import './ActiveChannelsList.css';
 
 const ActiveChannelsList = props => {
   return (
-    <Col md={2}>
+    <Col md={2} className="pull-right">
       <ListGroup className="active-channels-list">
         <h1>
           Active Channels

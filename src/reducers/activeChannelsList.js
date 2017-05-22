@@ -6,8 +6,19 @@ import {
 
 function items(state = [], action) {
   if (action.type === SELECT_STREAM) {
+    console.log(state);
     const newStream = [action.stream];
-    const newState = state.concat(newStream);
+    let newState;
+
+    if (state.length < 4) {
+      newState = state.concat(newStream);
+    }
+
+    if (state.length === 4) {
+      newState = state.filter(stream => state.indexOf(stream) !== 3);
+      newState = newState.concat(newStream);
+    }
+
     console.log(newState);
     return newState;
   }

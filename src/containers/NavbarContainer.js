@@ -1,5 +1,5 @@
-import {connect} from 'react-redux';
-import SearchForm from '../components/SearchForm/SearchForm';
+import { connect } from 'react-redux';
+import MyNavbar from '../components/Navbar/Navbar';
 import {
   changeSearchText,
   changeSearchCriteria,
@@ -37,4 +37,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchForm);
+)(MyNavbar);

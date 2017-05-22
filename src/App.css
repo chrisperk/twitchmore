@@ -1,3 +1,7 @@
 .App, .app-grid {
   text-align: center;
 }
+
+.app-grid {
+  height: calc(100vh - 52px);
+}

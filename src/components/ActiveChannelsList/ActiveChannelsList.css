@@ -27,6 +27,6 @@ h1 {
 }
 
 .active-channels-list {
-  height: 100vh;
+  height: calc(100vh - 52px);
   overflow: scroll;
 }
