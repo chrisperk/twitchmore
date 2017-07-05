@@ -1,12 +1,11 @@
-h1 {
-  font-size: 20px;
-  text-decoration: underline;
-  margin-top: 0;
-  margin-bottom: 4px;
+#toggle-active-channels-visibility {
+  position: relative;
+  top: -46px;
+  right: -65px;
 }
 
 .active-channel .image-cropper {
-  width: 165px;
+  width: 130px;
   height: 100px;
   position: relative;
   top: -6px;
@@ -29,4 +28,8 @@ h1 {
 .active-channels-list {
   height: calc(100vh - 52px);
   overflow: scroll;
+}
+
+.fa:hover {
+  cursor: pointer;
 }

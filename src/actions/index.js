@@ -65,17 +65,63 @@ export function selectStream(stream) {
 
 export const UNSELECT_STREAM = 'UNSELECT_STREAM';
 
-export function unselectStream(activeChannel) {
+export function unselectStream(activeChannel, activeChannels) {
   return {
     type: UNSELECT_STREAM,
-    activeChannel
+    activeChannel,
+    activeChannels
   };
 }
 
-export function getSearchResultsStart(event, criteria, searchText) {
+export const HIDE_CHANNELS_LIST = 'HIDE_CHANNELS_LIST';
+
+export function hideChannelsList() {
+  return {
+    type: HIDE_CHANNELS_LIST
+  };
+}
+
+export const REVEAL_CHANNELS_LIST = 'REVEAL_CHANNELS_LIST';
+
+export function revealChannelsList() {
+  return {
+    type: REVEAL_CHANNELS_LIST
+  };
+}
+
+export const HIDE_SEARCH_RESULTS = 'HIDE_SEARCH_RESULTS';
+
+export function hideSearchResults() {
+  return {
+    type: HIDE_SEARCH_RESULTS
+  };
+}
+
+export const GET_PREV_TEN = 'GET_PREV_TEN';
+
+export function getPrevTenResults(event, criteria, searchText, currentResultsPosition) {
+  return (dispatch) => {
+    dispatch({type: GET_PREV_TEN, currentResultsPosition});
+    const newResultsPosition = currentResultsPosition - 10;
+    dispatch(getSearchResultsStart(event, criteria, searchText, newResultsPosition));
+  };
+}
+
+export const GET_NEXT_TEN = 'GET_NEXT_TEN';
+
+export function getNextTenResults(event, criteria, searchText, currentResultsPosition) {
+  return (dispatch) => {
+    dispatch({type: GET_NEXT_TEN, currentResultsPosition});
+    const newResultsPosition = currentResultsPosition + 10;
+    dispatch(getSearchResultsStart(event, criteria, searchText, newResultsPosition));
+  };
+}
+
+export function getSearchResultsStart(event, criteria, searchText, currentResultsPosition) {
   return (dispatch) => {
     event.preventDefault();
     console.log('hi');
+    console.log(currentResultsPosition);
     if (criteria === 'game') {
       dispatch(lastSearchCriteria(criteria));
       const requestHeaders = {
@@ -84,7 +130,7 @@ export function getSearchResultsStart(event, criteria, searchText) {
           'Client-ID': 'v7mgsvgyfzdfvbm2p6wpgtxrpfyxbh'
         }
       };
-      axios.get(`https://api.twitch.tv/kraken/search/streams?limit=10&query=${searchText}`, requestHeaders)
+      axios.get(`https://api.twitch.tv/kraken/search/streams?limit=10&offset=${currentResultsPosition}&query=${searchText}`, requestHeaders)
         .then(response => {
           console.log(response.data);
           console.log(response.data.streams);

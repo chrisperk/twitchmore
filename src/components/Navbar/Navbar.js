@@ -18,7 +18,9 @@ const MyNavbar = props => {
       </Navbar.Header>
       <Navbar.Form pullLeft>
         <form className="search-form" onSubmit={
-          event => props.handleSearchSubmit(event, props.searchCriteria, props.searchText)
+          event => props.handleSearchSubmit(
+            event, props.searchCriteria, props.searchText, 0
+          )
         }>
           <FormGroup>
             <ControlLabel>Search by:&nbsp;</ControlLabel>
@@ -41,6 +43,16 @@ const MyNavbar = props => {
           <Button type="submit" bsStyle="primary">Submit</Button>
         </form>
       </Navbar.Form>
+      <Button
+        id="show-active-channels-button"
+        className="pull-right"
+        type="button"
+        bsStyle="primary"
+        style={{display: props.hideChannelsList ? 'block' : 'none'}}
+        onClick={event => props.handleRevealChannelsList(event)}
+      >
+        Show Active Channels
+      </Button>
     </Navbar>
   );
 };
@@ -54,6 +66,9 @@ MyNavbar.propTypes = {
   handleCriteriaChange: PropTypes.func.isRequired,
   handleTextChange: PropTypes.func.isRequired,
   handleSearchSubmit: PropTypes.func.isRequired,
+  currentResultsPosition: PropTypes.number,
+  handleRevealChannelsList: PropTypes.func,
+  hideChannelsList: PropTypes.bool
 };
 
 export default MyNavbar;

@@ -1,19 +1,24 @@
 import {connect} from 'react-redux';
 import ActiveChannelsList from '../components/ActiveChannelsList/ActiveChannelsList';
 import {
-  unselectStream
+  unselectStream,
+  hideChannelsList
 } from '../actions/index';
 
 const mapStateToProps = state => {
   return {
-    activeChannels: state.twitchmore.activeChannelsList.items
+    activeChannels: state.twitchmore.activeChannelsList.items,
+    hideList: state.twitchmore.activeChannelsList.hideList
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleUnselectChannel: activeChannel => {
-      dispatch(unselectStream(activeChannel));
+    handleUnselectChannel: (activeChannel, activeChannels) => {
+      dispatch(unselectStream(activeChannel, activeChannels));
+    },
+    handleHideChannelsList: () => {
+      dispatch(hideChannelsList());
     }
   };
 };

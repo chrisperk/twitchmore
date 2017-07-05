@@ -3,7 +3,9 @@ import ChannelDisplaySpace from '../components/ChannelDisplaySpace/ChannelDispla
 
 const mapStateToProps = state => {
   return {
-    activeChannels: state.twitchmore.activeChannelsList.items
+    activeChannels: state.twitchmore.activeChannelsList.items,
+    isChannelsListDisplayed: state.twitchmore.activeChannelsList.hideList,
+    areSearchResultsDisplayed: state.twitchmore.searchForm.showSearchResults
   };
 };
 

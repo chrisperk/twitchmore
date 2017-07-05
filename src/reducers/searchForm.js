@@ -5,7 +5,10 @@ import {
   LAST_SEARCHCRITERIA,
   GET_SEARCHRESULTS_START,
   GET_SEARCHRESULTS_SUCCESS,
-  GET_SEARCHRESULTS_ERROR
+  GET_SEARCHRESULTS_ERROR,
+  GET_NEXT_TEN,
+  GET_PREV_TEN,
+  HIDE_SEARCH_RESULTS
 } from '../actions/index';
 
 function searchCriteria(state = 'game', action) {
@@ -51,7 +54,13 @@ function searchResults(state = [], action) {
   return state;
 }
 
-function currentResultsPosition(state = null) {
+function currentResultsPosition(state = 0, action) {
+  if (action.type === GET_PREV_TEN) {
+    return action.currentResultsPosition - 10;
+  }
+  if (action.type === GET_NEXT_TEN) {
+    return action.currentResultsPosition + 10;
+  }
   return state;
 }
 
@@ -62,13 +71,24 @@ function lastSearchCriteria(state = null, action) {
   return state;
 }
 
+function showSearchResults(state = false, action) {
+  if (action.type === GET_SEARCHRESULTS_SUCCESS) {
+    return true;
+  }
+  if (action.type === HIDE_SEARCH_RESULTS) {
+    return false;
+  }
+  return state;
+}
+
 const contactForm = combineReducers({
   searchCriteria,
   searchPlaceholder,
   searchText,
   searchResults,
   currentResultsPosition,
-  lastSearchCriteria
+  lastSearchCriteria,
+  showSearchResults
 });
 
 export default contactForm;

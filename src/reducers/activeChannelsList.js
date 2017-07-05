@@ -1,7 +1,9 @@
 import {combineReducers} from 'redux';
 import {
   SELECT_STREAM,
-  UNSELECT_STREAM
+  UNSELECT_STREAM,
+  HIDE_CHANNELS_LIST,
+  REVEAL_CHANNELS_LIST
 } from '../actions/index';
 
 function items(state = [], action) {
@@ -35,9 +37,32 @@ function activeAudioChannel(state = null) {
   return state;
 }
 
+function hideList(state = true, action) {
+  if (action.type === SELECT_STREAM) {
+    return false;
+  }
+
+  if (action.type === UNSELECT_STREAM) {
+    if (action.activeChannels.length === 1) {
+      return true;
+    }
+  }
+
+  if (action.type === HIDE_CHANNELS_LIST) {
+    return true;
+  }
+
+  if (action.type === REVEAL_CHANNELS_LIST) {
+    return false;
+  }
+
+  return state;
+}
+
 const activeChannelsList = combineReducers({
   items,
-  activeAudioChannel
+  activeAudioChannel,
+  hideList
 });
 
 export default activeChannelsList;

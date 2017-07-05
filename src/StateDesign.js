@@ -6,7 +6,8 @@ export const stateDesign = {
       placeholder: 'Enter streamer',
       searchText: '',
       searchResults: [],
-      currentResultsPosition: null
+      currentResultsPosition: null,
+      totalResults: null
     },
     activeChannelsList: {
       items: [],

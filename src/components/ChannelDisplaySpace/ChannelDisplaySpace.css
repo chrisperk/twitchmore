@@ -1,5 +1,5 @@
 .channel-display-space {
-  height: 100vh;
+  height: calc(100vh - 52px);
 }
 
 .channel-display {

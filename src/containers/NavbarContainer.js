@@ -4,7 +4,8 @@ import {
   changeSearchText,
   changeSearchCriteria,
   getSearchResultsStart,
-  selectStream
+  selectStream,
+  revealChannelsList
 } from '../actions/index';
 
 const mapStateToProps = state => {
@@ -13,7 +14,9 @@ const mapStateToProps = state => {
     searchPlaceholder: state.twitchmore.searchForm.searchPlaceholder,
     searchCriteria: state.twitchmore.searchForm.searchCriteria,
     searchResults: state.twitchmore.searchForm.searchResults,
-    lastSearchCriteria: state.twitchmore.searchForm.lastSearchCriteria
+    currentResultsPosition: state.twitchmore.searchForm.currentResultsPosition,
+    lastSearchCriteria: state.twitchmore.searchForm.lastSearchCriteria,
+    hideChannelsList: state.twitchmore.activeChannelsList.hideList
   };
 };
 
@@ -25,11 +28,14 @@ const mapDispatchToProps = dispatch => {
     handleCriteriaChange: criteria => {
       dispatch(changeSearchCriteria(criteria));
     },
-    handleSearchSubmit: (event, criteria, text) => {
-      dispatch(getSearchResultsStart(event, criteria, text));
+    handleSearchSubmit: (event, criteria, text, currentResultsPosition) => {
+      dispatch(getSearchResultsStart(event, criteria, text, currentResultsPosition));
     },
     handleSelectStream: stream => {
       dispatch(selectStream(stream));
+    },
+    handleRevealChannelsList: () => {
+      dispatch(revealChannelsList());
     }
   };
 };
