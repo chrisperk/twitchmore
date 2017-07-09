@@ -1,4 +1,5 @@
 import axios from 'axios';
+require('dotenv').config();
 
 export const CHANGE_SEARCHTEXT = 'CHANGE_SEARCHTEXT';
 
@@ -127,7 +128,7 @@ export function getSearchResultsStart(event, criteria, searchText, currentResult
       const requestHeaders = {
         headers: {
           Accept: 'application/vnd.twitchtv.v5+json',
-          'Client-ID': 'v7mgsvgyfzdfvbm2p6wpgtxrpfyxbh'
+          'Client-ID': process.env.REACT_APP_SECRET
         }
       };
       axios.get(`https://api.twitch.tv/kraken/search/streams?limit=10&offset=${currentResultsPosition}&query=${searchText}`, requestHeaders)
@@ -148,7 +149,7 @@ export function getSearchResultsStart(event, criteria, searchText, currentResult
       const requestHeaders = {
         headers: {
           Accept: 'application/vnd.twitchtv.v5+json',
-          'Client-ID': 'v7mgsvgyfzdfvbm2p6wpgtxrpfyxbh'
+          'Client-ID': process.env.REACT_APP_SECRET
         }
       };
       axios.get(`https://api.twitch.tv/kraken/search/channels?limit=10&query=${searchText}`, requestHeaders)
