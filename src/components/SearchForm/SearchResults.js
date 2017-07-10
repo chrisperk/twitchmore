@@ -9,9 +9,12 @@ import './SearchResults.css';
 const SearchResults = props => {
   if (props.lastSearchCriteria === 'game') {
     return (
-      <Col md={10} className={props.showSearchResults ? '' : 'hidden'}>
+      <Col
+        sm={props.isChannelsListDisplayed ? 12 : 10}
+        className={props.showSearchResults ? '' : 'hidden'}
+      >
         <Row className="search-results-list">
-          <Col md={1} className="cursor-button">
+          <Col xs={2} sm={1} className="cursor-button">
             <Button
               id="prev-ten-button"
               className="search-results-button"
@@ -27,7 +30,9 @@ const SearchResults = props => {
           </Col>
           {props.searchResults.map(stream => {
             return (
-              <Col md={1}
+              <Col
+                xs={2}
+                sm={1}
                 className="search-result"
                 key={stream.channel._id}
                 onClick={event => props.handleSelectStream(stream, event)}
@@ -40,7 +45,7 @@ const SearchResults = props => {
               </Col>
             );
           })}
-          <Col md={1} className="cursor-button pull-right">
+          <Col xs={2} sm={1} className="cursor-button pull-right">
             <Button
               id="next-ten-button"
               className="search-results-button"
@@ -53,10 +58,9 @@ const SearchResults = props => {
               <i className="fa fa-chevron-right fa-3x" />
             </Button>
           </Col>
-          <Col md={2} mdOffset={5}>
+          <Col xs={2} xsOffset={3} sm={2} smOffset={4}>
             <Button id="hide-results-button" onClick={
               () => {
-                console.log(props.showSearchResults);
                 props.handleHideSearchResults();
               }
             }>
@@ -69,9 +73,12 @@ const SearchResults = props => {
   }
   if (props.lastSearchCriteria === 'streamer') {
     return (
-      <Col md={10} className={props.showSearchResults ? '' : 'hidden'}>
+      <Col
+        sm={props.isChannelsListDisplayed ? 12 : 10}
+        className={props.showSearchResults ? '' : 'hidden'}
+      >
         <Row className="search-results-list">
-          <Col md={1} className="cursor-button">
+          <Col xs={2} sm={1} className="cursor-button">
             <Button
               id="prev-ten-button"
               className="search-results-button"
@@ -87,7 +94,9 @@ const SearchResults = props => {
           </Col>
           {props.searchResults.map(stream => {
             return (
-              <Col md={1}
+              <Col
+                xs={2}
+                sm={1}
                 className="search-result"
                 key={stream._id}
                 onClick={event => props.handleSelectStream(stream, event)}
@@ -100,7 +109,7 @@ const SearchResults = props => {
               </Col>
             );
           })}
-          <Col md={1} className="cursor-button pull-right">
+          <Col xs={2} sm={1} className="cursor-button pull-right">
             <Button
               id="next-ten-button"
               className="search-results-button"
@@ -113,7 +122,7 @@ const SearchResults = props => {
               <i className="fa fa-chevron-right fa-3x" />
             </Button>
           </Col>
-          <Col md={2} mdOffset={5}>
+          <Col xs={2} xsOffset={3} sm={2} smOffset={5}>
             <Button id="hide-results-button" onClick={
               () => props.handleHideSearchResults()}
             >
@@ -137,7 +146,8 @@ SearchResults.propTypes = {
   handlePrevTen: PropTypes.func,
   handleNextTen: PropTypes.func,
   showSearchResults: PropTypes.bool,
-  handleHideSearchResults: PropTypes.func
+  handleHideSearchResults: PropTypes.func,
+  isChannelsListDisplayed: PropTypes.bool
 };
 
 export default SearchResults;

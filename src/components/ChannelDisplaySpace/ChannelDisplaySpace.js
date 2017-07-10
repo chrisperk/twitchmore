@@ -8,12 +8,12 @@ import './ChannelDisplaySpace.css';
 const ChannelDisplaySpace = props => {
   if (props.activeChannels.length === 1) {
     return (
-      <Col md={props.isChannelsListDisplayed ? 12 : 10}>
+      <Col sm={props.isChannelsListDisplayed ? 12 : 10}>
         <Row className="channel-display-space">
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
               return (
-                <Col key={activeChannel._id} className="channel-display" md={12}>
+                <Col key={activeChannel._id} className="channel-display" sm={12}>
                   <iframe
                     src={`http://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
@@ -30,7 +30,7 @@ const ChannelDisplaySpace = props => {
 
             if (!activeChannel.channel) {
               return (
-                <Col key={activeChannel._id} className="channel-display" md={12}>
+                <Col key={activeChannel._id} className="channel-display" sm={12}>
                   <iframe
                     src={`http://player.twitch.tv/?channel=${activeChannel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
@@ -53,12 +53,12 @@ const ChannelDisplaySpace = props => {
 
   if (props.activeChannels.length === 2) {
     return (
-      <Col md={props.isChannelsListDisplayed ? 12 : 10}>
+      <Col sm={props.isChannelsListDisplayed ? 12 : 10}>
         <Row className="channel-display-space">
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
               return (
-                <Col className="channel-display" md={12} key={activeChannel._id}>
+                <Col className="channel-display" sm={12} key={activeChannel._id}>
                   <iframe
                     src={`http://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
@@ -75,7 +75,7 @@ const ChannelDisplaySpace = props => {
 
             if (!activeChannel.channel) {
               return (
-                <Col className="channel-display" md={12} key={activeChannel._id}>
+                <Col className="channel-display" sm={12} key={activeChannel._id}>
                   <iframe
                     src={`http://player.twitch.tv/?channel=${activeChannel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
@@ -98,11 +98,11 @@ const ChannelDisplaySpace = props => {
 
   if (props.activeChannels.length === 3) {
     return (
-      <Col md={props.isChannelsListDisplayed ? 12 : 10}>
+      <Col sm={props.isChannelsListDisplayed ? 12 : 10}>
         <Row className="channel-display-space">
           {
             props.activeChannels[0].channel ?
-              <Col className="channel-display" md={12} key={props.activeChannels[0]._id}>
+              <Col className="channel-display" sm={12} key={props.activeChannels[0]._id}>
                 <iframe
                   src={`http://player.twitch.tv/?channel=${props.activeChannels[0].channel.display_name}`}
                   height={props.areSearchResultsDisplayed ?
@@ -114,7 +114,7 @@ const ChannelDisplaySpace = props => {
                   allowFullScreen="true"
                 />
               </Col> :
-              <Col className="channel-display" md={12} key={props.activeChannels[0]._id}>
+              <Col className="channel-display" sm={12} key={props.activeChannels[0]._id}>
                 <iframe
                   src={`http://player.twitch.tv/?channel=${props.activeChannels[0].display_name}`}
                   height={props.areSearchResultsDisplayed ?
@@ -129,7 +129,7 @@ const ChannelDisplaySpace = props => {
           }
           {
             props.activeChannels[1].channel ?
-              <Col className="channel-display" md={6} key={props.activeChannels[1]._id}>
+              <Col className="channel-display" sm={6} key={props.activeChannels[1]._id}>
                 <iframe
                   src={`http://player.twitch.tv/?channel=${props.activeChannels[1].channel.display_name}`}
                   height={props.areSearchResultsDisplayed ?
@@ -141,7 +141,7 @@ const ChannelDisplaySpace = props => {
                   allowFullScreen="true"
                 />
               </Col> :
-              <Col className="channel-display" md={6} key={props.activeChannels[1]._id}>
+              <Col className="channel-display" sm={6} key={props.activeChannels[1]._id}>
                 <iframe
                   src={`http://player.twitch.tv/?channel=${props.activeChannels[1].display_name}`}
                   height={props.areSearchResultsDisplayed ?
@@ -156,7 +156,7 @@ const ChannelDisplaySpace = props => {
           }
           {
             props.activeChannels[2].channel ?
-              <Col className="channel-display" md={6} key={props.activeChannels[2]._id}>
+              <Col className="channel-display" sm={6} key={props.activeChannels[2]._id}>
                 <iframe
                   src={`http://player.twitch.tv/?channel=${props.activeChannels[2].channel.display_name}`}
                   height={props.areSearchResultsDisplayed ?
@@ -168,7 +168,7 @@ const ChannelDisplaySpace = props => {
                   allowFullScreen="true"
                 />
               </Col> :
-              <Col className="channel-display" md={6} key={props.activeChannels[2]._id}>
+              <Col className="channel-display" sm={6} key={props.activeChannels[2]._id}>
                 <iframe
                   src={`http://player.twitch.tv/?channel=${props.activeChannels[2].display_name}`}
                   height={props.areSearchResultsDisplayed ?
@@ -193,7 +193,7 @@ const ChannelDisplaySpace = props => {
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
               return (
-                <Col className="channel-display" md={6} key={activeChannel._id}>
+                <Col className="channel-display" sm={6} key={activeChannel._id}>
                   <iframe
                     src={`http://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
@@ -210,7 +210,7 @@ const ChannelDisplaySpace = props => {
 
             if (!activeChannel.channel) {
               return (
-                <Col className="channel-display" md={6} key={activeChannel._id}>
+                <Col className="channel-display" sm={6} key={activeChannel._id}>
                   <iframe
                     src={`http://player.twitch.tv/?channel=${activeChannel.display_name}`}
                     height={props.areSearchResultsDisplayed ?

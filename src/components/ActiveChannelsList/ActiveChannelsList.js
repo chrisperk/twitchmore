@@ -12,7 +12,8 @@ const title = 'Active Channels';
 const ActiveChannelsList = props => {
   return (
     <Col
-      md={2}
+      xs={12}
+      sm={2}
       className="pull-right"
       style={{display: props.hideList ? 'none' : 'block'}}
     >

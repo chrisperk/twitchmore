@@ -18,7 +18,8 @@ const mapStateToProps = state => {
     searchResults: state.twitchmore.searchForm.searchResults,
     lastSearchCriteria: state.twitchmore.searchForm.lastSearchCriteria,
     currentResultsPosition: state.twitchmore.searchForm.currentResultsPosition,
-    showSearchResults: state.twitchmore.searchForm.showSearchResults
+    showSearchResults: state.twitchmore.searchForm.showSearchResults,
+    isChannelsListDisplayed: state.twitchmore.activeChannelsList.hideList
   };
 };
 

@@ -16,7 +16,7 @@
 }
 
 .search-results-button {
-  height: 131px;
+  height: 111px;
 }
 
 .search-result:hover, .search-results-button:hover {
@@ -24,14 +24,13 @@
 }
 
 .image-cropper {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   position: relative;
   top: 0px;
-  left: 2px;
   overflow: hidden;
   border-radius: 50%;
-  margin-bottom: 5px;
+  margin: 0 auto 5px auto;
 }
 
 .search-result img {

@@ -8,7 +8,6 @@ import {
 
 function items(state = [], action) {
   if (action.type === SELECT_STREAM) {
-    console.log(state);
     const newStream = [action.stream];
     let newState;
 
@@ -20,13 +19,9 @@ function items(state = [], action) {
       newState = state.filter(stream => state.indexOf(stream) !== 3);
       newState = newState.concat(newStream);
     }
-
-    console.log(newState);
     return newState;
   }
   if (action.type === UNSELECT_STREAM) {
-    console.log(state);
-    console.log(action.activeChannel._id);
     const newState = state.filter(channel => channel._id !== action.activeChannel._id);
     return newState;
   }
