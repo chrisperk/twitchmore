@@ -53,21 +53,22 @@ const MyNavbar = props => {
           </FormGroup>
         </form>
       </Navbar.Form>
-      <div className="pull-right mid-align">
-        <Button
-          id="show-active-channels-button"
-          className="pull-right"
-          type="button"
-          bsStyle="info"
-          style={{
-            display: props.hideChannelsList && props.activeChannels.length > 0 ? 'block' : 'none'
-          }}
-          onClick={event => props.handleRevealChannelsList(event)}
-        >
-          Show Active Channels
-        </Button>
-      </div>
     </Navbar>
+      // <div className="pull-right mid-align">
+      //   <Button
+      //     id="show-active-channels-button"
+      //     className="pull-right"
+      //     type="button"
+      //     bsStyle="info"
+      //     style={{
+      //       display: props.hideChannelsList && props.activeChannels.length > 0 ? 'block' : 'none'
+      //     }}
+      //     onClick={event => props.handleRevealChannelsList(event)}
+      //   >
+      //     Show Active Channels
+      //   </Button>
+      // </div>
+
   );
 };
 

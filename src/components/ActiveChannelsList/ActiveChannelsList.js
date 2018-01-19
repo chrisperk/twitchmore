@@ -4,11 +4,19 @@ import {
   Col,
   Panel,
   ListGroup,
-  ListGroupItem
+  ListGroupItem,
+  Button,
+  Tooltip,
+  OverlayTrigger
 } from 'react-bootstrap';
 import './ActiveChannelsList.css';
 
 const title = 'Active Channels';
+const hideListTooltip = (
+  <Tooltip id="hide-list-tooltip">
+    Hide Active channels
+  </Tooltip>
+);
 
 const ActiveChannelsList = props => {
   return (
@@ -18,6 +26,20 @@ const ActiveChannelsList = props => {
       xs={12}
       sm={2}
     >
+      <div id="show-list-wrapper">
+        <Button
+          bsStyle="info"
+          id="show-list-button"
+          style={{
+            display:
+              props.hideList && props.activeChannels.length > 0 ? 'block' :
+              'none'
+          }}
+          onClick={event => props.handleRevealChannelsList(event)}
+        >
+          Show<br />Active<br />Channels
+        </Button>
+      </div>
       <Panel
         bsStyle="info"
         id="active-channels-list"
@@ -29,11 +51,20 @@ const ActiveChannelsList = props => {
                 {title}
               </Col>
               <Col xs={4} className="mid-align">
-                <i
-                  className="fa fa-eye-slash pull-right"
-                  id="toggle-active-channels-visibility"
-                  onClick={event => props.handleHideChannelsList(event)}
-                />
+                <OverlayTrigger
+                  placement="top"
+                  overlay={hideListTooltip}
+                >
+                  <div
+                    className="pull-right"
+                    onClick={event => props.handleHideChannelsList(event)}
+                  >
+                    <i
+                      className="fa fa-eye-slash pull-right"
+                      id="toggle-active-channels-visibility"
+                    />
+                  </div>
+                </OverlayTrigger>
               </Col>
             </Row>
           </Panel.Title>
@@ -91,5 +122,6 @@ ActiveChannelsList.propTypes = {
   activeChannels: PropTypes.array.isRequired,
   handleUnselectChannel: PropTypes.func,
   hideList: PropTypes.bool,
-  handleHideChannelsList: PropTypes.func
+  handleHideChannelsList: PropTypes.func,
+  handleRevealChannelsList: PropTypes.func
 };

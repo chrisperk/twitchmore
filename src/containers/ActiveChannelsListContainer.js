@@ -2,7 +2,8 @@ import {connect} from 'react-redux';
 import ActiveChannelsList from '../components/ActiveChannelsList/ActiveChannelsList';
 import {
   unselectStream,
-  hideChannelsList
+  hideChannelsList,
+  revealChannelsList
 } from '../actions/index';
 
 const mapStateToProps = state => {
@@ -19,6 +20,9 @@ const mapDispatchToProps = dispatch => {
     },
     handleHideChannelsList: () => {
       dispatch(hideChannelsList());
+    },
+    handleRevealChannelsList: () => {
+      dispatch(revealChannelsList());
     }
   };
 };
