@@ -44,7 +44,7 @@ const MyNavbar = props => {
             />
             <Button
               type="submit"
-              bsStyle="info"
+              bsStyle="primary"
               className="margin-left-small"
               disabled={props.searchText.length === 0}
             >
@@ -58,7 +58,7 @@ const MyNavbar = props => {
           id="show-active-channels-button"
           className="pull-right"
           type="button"
-          bsStyle="primary"
+          bsStyle="info"
           style={{
             display: props.hideChannelsList && props.activeChannels.length > 0 ? 'block' : 'none'
           }}

@@ -19,7 +19,7 @@ const ActiveChannelsList = props => {
       sm={2}
     >
       <Panel
-        bsStyle="primary"
+        bsStyle="info"
         id="active-channels-list"
       >
         <Panel.Heading className="height-5em">

@@ -28,13 +28,11 @@
 }
 
 .active-channel .image-cropper {
-  width: 8em;
+  width: 100%;
   height: 6em;
   position: relative;
-  top: -6px;
-  left: -0.5em;
   overflow: hidden;
-  border-radius: 25%;
+  border-radius: 8%;
 }
 
 .active-channel {
