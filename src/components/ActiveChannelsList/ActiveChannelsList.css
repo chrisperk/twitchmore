@@ -13,7 +13,7 @@
 }
 
 #active-channels-list {
-  height: 100%;
+  height: calc(100vh - 64px);
   overflow: auto;
   width: 100%;
 }
@@ -46,6 +46,11 @@
   border-radius: 8%;
 }
 
+.list-group-item.active-channel:hover {
+  border: 1px solid #235585;
+  background-color: #D4EAF6;
+}
+
 #hide-list-tooltip {
   margin-left: 20px;
 }
@@ -56,6 +61,7 @@
 
 .active-channel {
   line-height: 0.9;
+  margin-bottom: 1px;
 }
 
 .active-channel img {

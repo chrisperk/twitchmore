@@ -25,7 +25,7 @@ const ChannelDisplaySpace = props => {
               return (
                 <Col key={activeChannel._id} className="channel-display" sm={12}>
                   <iframe
-                    src={`http://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
+                    src={`https://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
                       window.innerHeight - 186 + 'px' :
                       window.innerHeight - 50 + 'px'}
@@ -42,7 +42,7 @@ const ChannelDisplaySpace = props => {
               return (
                 <Col key={activeChannel._id} className="channel-display" sm={12}>
                   <iframe
-                    src={`http://player.twitch.tv/?channel=${activeChannel.display_name}`}
+                    src={`https://player.twitch.tv/?channel=${activeChannel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
                       window.innerHeight - 186 + 'px' :
                       window.innerHeight - 50 + 'px'}
@@ -80,7 +80,7 @@ const ChannelDisplaySpace = props => {
               return (
                 <Col className="channel-display" sm={12} key={activeChannel._id}>
                   <iframe
-                    src={`http://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
+                    src={`https://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
                       window.innerHeight / 2 - 93 + 'px' :
                       window.innerHeight / 2 - 26 + 'px'}
@@ -97,7 +97,7 @@ const ChannelDisplaySpace = props => {
               return (
                 <Col className="channel-display" sm={12} key={activeChannel._id}>
                   <iframe
-                    src={`http://player.twitch.tv/?channel=${activeChannel.display_name}`}
+                    src={`https://player.twitch.tv/?channel=${activeChannel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
                       window.innerHeight / 2 - 93 + 'px' :
                       window.innerHeight / 2 - 26 + 'px'}
@@ -134,7 +134,7 @@ const ChannelDisplaySpace = props => {
             props.activeChannels[0].channel ?
               <Col className="channel-display" sm={12} key={props.activeChannels[0]._id}>
                 <iframe
-                  src={`http://player.twitch.tv/?channel=${props.activeChannels[0].channel.display_name}`}
+                  src={`https://player.twitch.tv/?channel=${props.activeChannels[0].channel.display_name}`}
                   height={props.areSearchResultsDisplayed ?
                     window.innerHeight / 2 - 93 + 'px' :
                     window.innerHeight / 2 - 26 + 'px'}
@@ -146,7 +146,7 @@ const ChannelDisplaySpace = props => {
               </Col> :
               <Col className="channel-display" sm={12} key={props.activeChannels[0]._id}>
                 <iframe
-                  src={`http://player.twitch.tv/?channel=${props.activeChannels[0].display_name}`}
+                  src={`https://player.twitch.tv/?channel=${props.activeChannels[0].display_name}`}
                   height={props.areSearchResultsDisplayed ?
                     window.innerHeight / 2 - 93 + 'px' :
                     window.innerHeight / 2 - 26 + 'px'}
@@ -161,7 +161,7 @@ const ChannelDisplaySpace = props => {
             props.activeChannels[1].channel ?
               <Col className="channel-display" sm={6} key={props.activeChannels[1]._id}>
                 <iframe
-                  src={`http://player.twitch.tv/?channel=${props.activeChannels[1].channel.display_name}`}
+                  src={`https://player.twitch.tv/?channel=${props.activeChannels[1].channel.display_name}`}
                   height={props.areSearchResultsDisplayed ?
                     window.innerHeight / 2 - 93 + 'px' :
                     window.innerHeight / 2 - 26 + 'px'}
@@ -173,7 +173,7 @@ const ChannelDisplaySpace = props => {
               </Col> :
               <Col className="channel-display" sm={6} key={props.activeChannels[1]._id}>
                 <iframe
-                  src={`http://player.twitch.tv/?channel=${props.activeChannels[1].display_name}`}
+                  src={`https://player.twitch.tv/?channel=${props.activeChannels[1].display_name}`}
                   height={props.areSearchResultsDisplayed ?
                     window.innerHeight / 2 - 93 + 'px' :
                     window.innerHeight / 2 - 26 + 'px'}
@@ -188,7 +188,7 @@ const ChannelDisplaySpace = props => {
             props.activeChannels[2].channel ?
               <Col className="channel-display" sm={6} key={props.activeChannels[2]._id}>
                 <iframe
-                  src={`http://player.twitch.tv/?channel=${props.activeChannels[2].channel.display_name}`}
+                  src={`https://player.twitch.tv/?channel=${props.activeChannels[2].channel.display_name}`}
                   height={props.areSearchResultsDisplayed ?
                     window.innerHeight / 2 - 93 + 'px' :
                     window.innerHeight / 2 - 26 + 'px'}
@@ -200,7 +200,7 @@ const ChannelDisplaySpace = props => {
               </Col> :
               <Col className="channel-display" sm={6} key={props.activeChannels[2]._id}>
                 <iframe
-                  src={`http://player.twitch.tv/?channel=${props.activeChannels[2].display_name}`}
+                  src={`https://player.twitch.tv/?channel=${props.activeChannels[2].display_name}`}
                   height={props.areSearchResultsDisplayed ?
                     window.innerHeight / 2 - 93 + 'px' :
                     window.innerHeight / 2 - 26 + 'px'}
@@ -235,7 +235,7 @@ const ChannelDisplaySpace = props => {
               return (
                 <Col className="channel-display" sm={6} key={activeChannel._id}>
                   <iframe
-                    src={`http://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
+                    src={`https://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
                       window.innerHeight / 2 - 93 + 'px' :
                       window.innerHeight / 2 - 26 + 'px'}
@@ -252,7 +252,7 @@ const ChannelDisplaySpace = props => {
               return (
                 <Col className="channel-display" sm={6} key={activeChannel._id}>
                   <iframe
-                    src={`http://player.twitch.tv/?channel=${activeChannel.display_name}`}
+                    src={`https://player.twitch.tv/?channel=${activeChannel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
                       window.innerHeight / 2 - 93 + 'px' :
                       window.innerHeight / 2 - 26 + 'px'}

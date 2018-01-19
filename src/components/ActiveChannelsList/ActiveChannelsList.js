@@ -47,7 +47,7 @@ const ActiveChannelsList = props => {
         <Panel.Heading className="height-5em">
           <Panel.Title className="height-100">
             <Row className="height-100">
-              <Col xs={8}>
+              <Col xs={8} className="mid-align">
                 {title}
               </Col>
               <Col xs={4} className="mid-align">

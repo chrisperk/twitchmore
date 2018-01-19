@@ -1,6 +1,6 @@
 #hide-results-button {
   position: absolute;
-  left: 15px;
+  left: 50%;
   z-index: 2;
 }
 
@@ -30,12 +30,25 @@
 .search-result {
   font-size: 9px;
   text-align: center;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   padding: 0;
+}
+
+.search-results-list > div:nth-of-type(2) {
+  border-radius: 5px 0 0 5px;
+}
+
+.search-results-list > div:nth-of-type(11) {
+  border-radius: 0 5px 5px 0;
 }
 
 .search-results-button {
   height: 111px;
+}
+
+.search-result:hover {
+  background-color: #D4EAF6;
+  border: 1px solid #235585;
 }
 
 .search-result:hover, .search-results-button:hover {
@@ -43,12 +56,12 @@
 }
 
 .image-cropper {
-  width: 60px;
+  width: 80%;
   height: 60px;
   position: relative;
-  top: 0px;
+  top: 2px;
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: 8%;
   margin: 0 auto 5px auto;
 }
 
