@@ -8,8 +8,18 @@ import './ChannelDisplaySpace.css';
 const ChannelDisplaySpace = props => {
   if (props.activeChannels.length === 1) {
     return (
-      <Col sm={props.isChannelsListDisplayed ? 12 : 10}>
-        <Row className="channel-display-space">
+      <Col
+        id="channel-display-wrapper"
+        sm={props.isChannelsListDisplayed ? 12 : 10}
+      >
+        <Row
+          id="channel-display-space"
+          className={
+            props.areSearchResultsDisplayed ?
+              'margin-top-115px' :
+              ''
+          }
+        >
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
               return (
@@ -53,8 +63,18 @@ const ChannelDisplaySpace = props => {
 
   if (props.activeChannels.length === 2) {
     return (
-      <Col sm={props.isChannelsListDisplayed ? 12 : 10}>
-        <Row className="channel-display-space">
+      <Col
+        id="channel-display-wrapper"
+        sm={props.isChannelsListDisplayed ? 12 : 10}
+      >
+        <Row
+          id="channel-display-space"
+          className={
+            props.areSearchResultsDisplayed ?
+              'margin-top-115px' :
+              ''
+          }
+        >
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
               return (
@@ -98,8 +118,18 @@ const ChannelDisplaySpace = props => {
 
   if (props.activeChannels.length === 3) {
     return (
-      <Col sm={props.isChannelsListDisplayed ? 12 : 10}>
-        <Row className="channel-display-space">
+      <Col
+        id="channel-display-wrapper"
+        sm={props.isChannelsListDisplayed ? 12 : 10}
+      >
+        <Row
+          id="channel-display-space"
+          className={
+            props.areSearchResultsDisplayed ?
+              'margin-top-115px' :
+              ''
+          }
+        >
           {
             props.activeChannels[0].channel ?
               <Col className="channel-display" sm={12} key={props.activeChannels[0]._id}>
@@ -188,8 +218,18 @@ const ChannelDisplaySpace = props => {
 
   if (props.activeChannels.length === 4) {
     return (
-      <Col md={props.isChannelsListDisplayed ? 12 : 10}>
-        <Row className="channel-display-space">
+      <Col
+        id="channel-display-wrapper"
+        sm={props.isChannelsListDisplayed ? 12 : 10}
+      >
+        <Row
+          id="channel-display-space"
+          className={
+            props.areSearchResultsDisplayed ?
+              'margin-top-115px' :
+              ''
+          }
+        >
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
               return (

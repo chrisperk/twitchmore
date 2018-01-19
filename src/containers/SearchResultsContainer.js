@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import SearchResults from '../components/SearchForm/SearchResults';
+import SearchResults from '../components/SearchResults/SearchResults';
 import {
   changeSearchText,
   changeSearchCriteria,

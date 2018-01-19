@@ -1,17 +1,40 @@
-#toggle-active-channels-visibility {
-  position: relative;
-  top: -46px;
-  right: -65px;
+#active-channels-wrapper {
+  height: calc(100vh - 52px);
+  position: absolute;
+  top: 0;
+  left: 90%;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: 1s ease all;
+  -o-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+#active-channels-list {
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+}
+
+#active-channels-wrapper.hide-list {
+  -webkit-transform: translateX(60%);
+  transform: translateX(60%);
+}
+
+#active-channels-wrapper.show-list {
+  -webkit-transform: translateX(-40%);
+  transform: translateX(-40%);
 }
 
 .active-channel .image-cropper {
-  width: 130px;
-  height: 100px;
+  width: 8em;
+  height: 6em;
   position: relative;
   top: -6px;
-  left: -10px;
+  left: -0.5em;
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: 25%;
 }
 
 .active-channel {
@@ -25,9 +48,18 @@
   width: auto;
 }
 
-.active-channels-list {
-  height: calc(100vh - 52px);
-  overflow: scroll;
+.height-5em {
+  height: 5em;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.mid-align {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .fa:hover {

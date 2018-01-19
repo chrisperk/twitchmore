@@ -11,20 +11,33 @@ function items(state = [], action) {
     const newStream = [action.stream];
     let newState;
 
-    if (state.length < 4) {
-      newState = state.concat(newStream);
+    let duplicateCheck = false;
+
+    for (let i = 0; i < state.length; i++) {
+      if (state[i]._id === newStream[0]._id) {
+        duplicateCheck = true;
+      }
     }
 
-    if (state.length === 4) {
-      newState = state.filter(stream => state.indexOf(stream) !== 3);
-      newState = newState.concat(newStream);
+    if (!duplicateCheck) {
+      if (state.length < 4) {
+        newState = state.concat(newStream);
+        return newState;
+      }
+
+      if (state.length === 4) {
+        newState = state.filter(stream => state.indexOf(stream) !== 3);
+        newState = newState.concat(newStream);
+        return newState;
+      }
     }
-    return newState;
   }
+
   if (action.type === UNSELECT_STREAM) {
     const newState = state.filter(channel => channel._id !== action.activeChannel._id);
     return newState;
   }
+
   return state;
 }
 

@@ -14,11 +14,11 @@ class App extends Component {
     return (
       <div className="App">
         <NavbarContainer />
-        <Grid className="app-grid" fluid>
+        <Grid id="app-grid" fluid>
           <Row>
             <SearchResultsContainer className="search-form" />
             <ActiveChannelsListContainer className="active-channels-list" />
-            <ChannelDisplaySpaceContainer className="channel-dispay-space" />
+            <ChannelDisplaySpaceContainer className="channel-dispay-wrapper" />
           </Row>
         </Grid>
       </div>

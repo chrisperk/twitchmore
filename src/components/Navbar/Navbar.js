@@ -34,25 +34,39 @@ const MyNavbar = props => {
               <option value="streamer">Streamer</option>
             </FormControl>
           </FormGroup>
-          <FormControl
-            type="text"
-            value={props.searchText}
-            placeholder={props.searchPlaceholder}
-            onChange={event => props.handleTextChange(event.target.value)}
-          />
-          <Button type="submit" bsStyle="primary">Submit</Button>
+          <FormGroup className="margin-top-small">
+            <FormControl
+              type="text"
+              className="margin-left-small"
+              value={props.searchText}
+              placeholder={props.searchPlaceholder}
+              onChange={event => props.handleTextChange(event.target.value)}
+            />
+            <Button
+              type="submit"
+              bsStyle="info"
+              className="margin-left-small"
+              disabled={props.searchText.length === 0}
+            >
+              Search
+            </Button>
+          </FormGroup>
         </form>
       </Navbar.Form>
-      <Button
-        id="show-active-channels-button"
-        className="pull-right"
-        type="button"
-        bsStyle="primary"
-        style={{display: props.hideChannelsList ? 'block' : 'none'}}
-        onClick={event => props.handleRevealChannelsList(event)}
-      >
-        Show Active Channels
-      </Button>
+      <div className="pull-right mid-align">
+        <Button
+          id="show-active-channels-button"
+          className="pull-right"
+          type="button"
+          bsStyle="primary"
+          style={{
+            display: props.hideChannelsList && props.activeChannels.length > 0 ? 'block' : 'none'
+          }}
+          onClick={event => props.handleRevealChannelsList(event)}
+        >
+          Show Active Channels
+        </Button>
+      </div>
     </Navbar>
   );
 };
@@ -68,7 +82,8 @@ MyNavbar.propTypes = {
   handleSearchSubmit: PropTypes.func.isRequired,
   currentResultsPosition: PropTypes.number,
   handleRevealChannelsList: PropTypes.func,
-  hideChannelsList: PropTypes.bool
+  hideChannelsList: PropTypes.bool,
+  activeChannels: PropTypes.array
 };
 
 export default MyNavbar;

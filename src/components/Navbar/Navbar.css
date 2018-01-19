@@ -1,7 +1,23 @@
 #my-navbar {
   margin-bottom: 0;
+  height: 4em;
 }
 
-#show-active-channels-button {
-  margin: 6px 0;
+.margin-top-small {
+  margin-top: 1px;
+}
+
+.margin-left-small {
+  margin-left: 5px;
+}
+
+.mid-align {
+  height: 100%;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.container-fluid {
+  height: 100%;
 }
