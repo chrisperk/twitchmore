@@ -2,9 +2,23 @@ import React, {PropTypes} from 'react';
 import {
   Col,
   Row,
-  Button
+  Button,
+  Tooltip,
+  OverlayTrigger
 } from 'react-bootstrap';
 import './SearchResults.css';
+
+const nextTenTooltip = (
+  <Tooltip id="next-ten-tooltip">
+    Next Ten Results
+  </Tooltip>
+);
+
+const prevTenTooltip = (
+  <Tooltip id="prev-ten-tooltip">
+    Previous Ten Results
+  </Tooltip>
+);
 
 const SearchResults = props => {
   if (props.lastSearchCriteria === 'game') {
@@ -20,18 +34,23 @@ const SearchResults = props => {
       >
         <Row className="search-results-list">
           <Col xs={2} sm={1} className="cursor-button">
-            <Button
-              id="prev-ten-button"
-              className="search-results-button"
-              disabled={props.currentResultsPosition === 0}
-              onClick={
-                (event) => props.handlePrevTen(
-                  event, props.searchCriteria, props.searchText, props.currentResultsPosition
-                )
-              }
+            <OverlayTrigger
+              placement="top"
+              overlay={prevTenTooltip}
             >
-              <i className="fa fa-chevron-left fa-3x" />
-            </Button>
+              <Button
+                id="prev-ten-button"
+                className="search-results-button"
+                disabled={props.currentResultsPosition === 0}
+                onClick={
+                  (event) => props.handlePrevTen(
+                    event, props.searchCriteria, props.searchText, props.currentResultsPosition
+                  )
+                }
+              >
+                <i className="fa fa-chevron-left fa-3x" />
+              </Button>
+            </OverlayTrigger>
           </Col>
           {props.searchResults.map(stream => {
             return (
@@ -51,17 +70,22 @@ const SearchResults = props => {
             );
           })}
           <Col xs={2} sm={1} className="cursor-button pull-right">
-            <Button
-              id="next-ten-button"
-              className="search-results-button"
-              onClick={
-                (event) => props.handleNextTen(
-                  event, props.searchCriteria, props.searchText, props.currentResultsPosition
-                )
-              }
+            <OverlayTrigger
+              placement="top"
+              overlay={nextTenTooltip}
             >
-              <i className="fa fa-chevron-right fa-3x" />
-            </Button>
+              <Button
+                id="next-ten-button"
+                className="search-results-button"
+                onClick={
+                  (event) => props.handleNextTen(
+                    event, props.searchCriteria, props.searchText, props.currentResultsPosition
+                  )
+                }
+              >
+                <i className="fa fa-chevron-right fa-3x" />
+              </Button>
+            </OverlayTrigger>
           </Col>
           <Col xs={2} xsOffset={3} sm={2} smOffset={4}>
             <Button id="hide-results-button" onClick={
