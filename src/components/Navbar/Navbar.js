@@ -15,44 +15,54 @@ const MyNavbar = props => {
         <Navbar.Brand pullLeft>
           <a href="#">TwitchMore</a>
         </Navbar.Brand>
+        <Navbar.Toggle />
       </Navbar.Header>
-      <Navbar.Form pullLeft>
-        <form className="search-form" onSubmit={
-          event => props.handleSearchSubmit(
-            event, props.searchCriteria, props.searchText, 0
-          )
-        }>
-          <FormGroup>
-            <ControlLabel>Search by:&nbsp;</ControlLabel>
-            <FormControl
-              componentClass="select"
-              placeholder="Game"
-              value={props.searchCriteria}
-              onChange={event => props.handleCriteriaChange(event.target.value)}
-            >
-              <option value="game">Game</option>
-              <option value="streamer">Streamer</option>
-            </FormControl>
-          </FormGroup>
-          <FormGroup className="margin-top-small">
-            <FormControl
-              type="text"
-              className="margin-left-small"
-              value={props.searchText}
-              placeholder={props.searchPlaceholder}
-              onChange={event => props.handleTextChange(event.target.value)}
-            />
-            <Button
-              type="submit"
-              bsStyle="primary"
-              className="margin-left-small"
-              disabled={props.searchText.length === 0}
-            >
-              Search
-            </Button>
-          </FormGroup>
-        </form>
-      </Navbar.Form>
+      <Navbar.Collapse>
+        <Navbar.Form pullLeft>
+          <form className="search-form" onSubmit={
+            event => props.handleSearchSubmit(
+              event, props.searchCriteria, props.searchText, 0
+            )
+          }>
+            <FormGroup>
+              <ControlLabel>Search by:&nbsp;</ControlLabel>
+              <FormControl
+                componentClass="select"
+                placeholder="Game"
+                value={props.searchCriteria}
+                onChange={event => props.handleCriteriaChange(event.target.value)}
+              >
+                <option value="game">Game</option>
+                <option value="streamer">Streamer</option>
+              </FormControl>
+            </FormGroup>
+            <FormGroup className="margin-top-small">
+              <FormControl
+                type="text"
+                className="margin-left-small hidden-xs"
+                value={props.searchText}
+                placeholder={props.searchPlaceholder}
+                onChange={event => props.handleTextChange(event.target.value)}
+              />
+              <FormControl
+                type="text"
+                className="visible-xs-block"
+                value={props.searchText}
+                placeholder={props.searchPlaceholder}
+                onChange={event => props.handleTextChange(event.target.value)}
+              />
+              <Button
+                type="submit"
+                bsStyle="primary"
+                className="margin-left-small"
+                disabled={props.searchText.length === 0}
+              >
+                Search
+              </Button>
+            </FormGroup>
+          </form>
+        </Navbar.Form>
+      </Navbar.Collapse>
     </Navbar>
       // <div className="pull-right mid-align">
       //   <Button
