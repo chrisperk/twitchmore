@@ -41,6 +41,16 @@ function searchText(state = '', action) {
   return state;
 }
 
+function searching(state = false, action) {
+  if (action.type === GET_SEARCHRESULTS_START) {
+    return true;
+  }
+  if (action.type === (GET_SEARCHRESULTS_START || GET_SEARCHRESULTS_ERROR)) {
+    return false;
+  }
+  return state;
+}
+
 function searchResults(state = [], action) {
   if (action.type === GET_SEARCHRESULTS_START) {
     return [];
@@ -85,6 +95,7 @@ const contactForm = combineReducers({
   searchCriteria,
   searchPlaceholder,
   searchText,
+  searching,
   searchResults,
   currentResultsPosition,
   lastSearchCriteria,

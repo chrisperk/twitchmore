@@ -36,10 +36,10 @@ const MyNavbar = props => {
                 <option value="streamer">Streamer</option>
               </FormControl>
             </FormGroup>
-            <FormGroup className="margin-top-small">
+            <FormGroup className="margin-top-1px">
               <FormControl
                 type="text"
-                className="margin-left-small hidden-xs"
+                className="margin-left-5px hidden-xs"
                 value={props.searchText}
                 placeholder={props.searchPlaceholder}
                 onChange={event => props.handleTextChange(event.target.value)}
@@ -54,7 +54,7 @@ const MyNavbar = props => {
               <Button
                 type="submit"
                 bsStyle="primary"
-                className="margin-left-small"
+                className="margin-left-1px margin-top-5px"
                 disabled={props.searchText.length === 0}
               >
                 Search

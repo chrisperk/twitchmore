@@ -15,6 +15,7 @@ const mapStateToProps = state => {
     searchText: state.twitchmore.searchForm.searchText,
     searchPlaceholder: state.twitchmore.searchForm.searchPlaceholder,
     searchCriteria: state.twitchmore.searchForm.searchCriteria,
+    isSearching: state.twitchmore.searchForm.searching,
     searchResults: state.twitchmore.searchForm.searchResults,
     lastSearchCriteria: state.twitchmore.searchForm.lastSearchCriteria,
     currentResultsPosition: state.twitchmore.searchForm.currentResultsPosition,

@@ -33,7 +33,7 @@ const SearchResults = props => {
         }
       >
         <Row className="search-results-list">
-          <Col xs={2} sm={1} className="cursor-button">
+          <Col xs={2} sm={1} className="prev-cursor-button">
             <OverlayTrigger
               placement="top"
               overlay={prevTenTooltip}
@@ -69,7 +69,7 @@ const SearchResults = props => {
               </Col>
             );
           })}
-          <Col xs={2} sm={1} className="cursor-button pull-right">
+          <Col xs={2} sm={1} className="next-cursor-button pull-right">
             <OverlayTrigger
               placement="top"
               overlay={nextTenTooltip}
@@ -87,8 +87,8 @@ const SearchResults = props => {
               </Button>
             </OverlayTrigger>
           </Col>
-          <Col xs={2} xsOffset={3} sm={2} smOffset={4}>
-            <Button id="hide-results-button" onClick={
+          <Col xs={12} sm={2} smOffset={4} className="hide-results-wrapper">
+            <Button id="hide-results-button" bsStyle="info" onClick={
               () => {
                 props.handleHideSearchResults();
               }
@@ -107,7 +107,7 @@ const SearchResults = props => {
         className={props.showSearchResults ? '' : 'hidden'}
       >
         <Row className="search-results-list">
-          <Col xs={2} sm={1} className="cursor-button">
+          <Col xs={2} sm={1} className="prev-cursor-button">
             <OverlayTrigger
               placement="top"
               overlay={prevTenTooltip}
@@ -143,7 +143,7 @@ const SearchResults = props => {
               </Col>
             );
           })}
-          <Col xs={2} sm={1} className="cursor-button pull-right">
+          <Col xs={2} sm={1} className="next-cursor-button pull-right">
             <OverlayTrigger
               placement="top"
               overlay={nextTenTooltip}

@@ -1,9 +1,15 @@
-.App, .app-grid {
+/* .App, .app-grid {
   text-align: center;
 }
 
 #app-grid {
-  height: calc(100vh - 52px);
   position: relative;
-  overflow: hidden;
+  overflow-y: inherit;
 }
+
+    @media (min-width: 768px) {
+      #app-grid {
+        height: calc(100vh - 52px);
+        overflow: hidden;
+      }
+    } */

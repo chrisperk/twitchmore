@@ -9,7 +9,9 @@ import {
 const mapStateToProps = state => {
   return {
     activeChannels: state.twitchmore.activeChannelsList.items,
-    hideList: state.twitchmore.activeChannelsList.hideList
+    hideList: state.twitchmore.activeChannelsList.hideList,
+    isSearching: state.twitchmore.searchForm.searching,
+    areSearchResultsDisplayed: state.twitchmore.searchForm.showSearchResults
   };
 };
 
