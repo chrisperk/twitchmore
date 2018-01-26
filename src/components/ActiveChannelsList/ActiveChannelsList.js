@@ -21,20 +21,6 @@ const hideListTooltip = (
 const ActiveChannelsList = props => {
   return (
     <div>
-      <div id="show-list-wrapper">
-        <Button
-          bsStyle="info"
-          id="show-list-button"
-          style={{
-            display:
-              props.hideList && props.activeChannels.length > 0 ? 'block' :
-              'none'
-          }}
-          onClick={event => props.handleRevealChannelsList(event)}
-        >
-          Show<br />Active<br />Channels
-        </Button>
-      </div>
       <Col
         id="active-channels-wrapper"
         className={
@@ -120,8 +106,22 @@ const ActiveChannelsList = props => {
               </Row>
             </ListGroup>
           </Panel.Body>
-        </Panel>
+        </Panel>        
       </Col>
+      <div id="show-list-wrapper">
+        <Button
+          bsStyle="info"
+          id="show-list-button"
+          style={{
+            display:
+              props.hideList && props.activeChannels.length > 0 ? 'block' :
+              'none'
+          }}
+          onClick={event => props.handleRevealChannelsList(event)}
+        >
+          Show<br />Active<br />Channels
+        </Button>
+      </div>
     </div>
   );
 };

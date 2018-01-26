@@ -15,16 +15,21 @@ const ChannelDisplaySpace = props => {
       >
         <Row
           id="channel-display-space"
-          className={
-            props.areSearchResultsDisplayed ?
-              '' :
-              'margin-top--70px'
-          }
+          // className={
+          //   props.areSearchResultsDisplayed ?
+          //     '' :
+          //     'margin-top--70px'
+          // }
         >
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
               return (
                 <Col key={activeChannel._id} className="channel-display" sm={12}>
+                  <div className="close-channel-button" onClick={event =>
+                    props.handleUnselectChannel(activeChannel, props.activeChannels, event)
+                  }>
+                    <i className="fa fa-times" />
+                  </div>
                   <iframe
                     src={`https://player.twitch.tv/?channel=${activeChannel.channel.display_name}`}
                     height={props.areSearchResultsDisplayed ?
@@ -35,11 +40,6 @@ const ChannelDisplaySpace = props => {
                     scrolling="no"
                     allowFullScreen="true"
                   />
-                  <div className="close-channel-button" onClick={event =>
-                    props.handleUnselectChannel(activeChannel, props.activeChannels, event)
-                  }>
-                    <i className="fa fa-times" />
-                  </div>
                 </Col>
               );
             }
@@ -81,11 +81,11 @@ const ChannelDisplaySpace = props => {
       >
         <Row
           id="channel-display-space"
-          className={
-            props.areSearchResultsDisplayed ?
-              '' :
-              'margin-top--70px'
-          }
+          // className={
+          //   props.areSearchResultsDisplayed ?
+          //     '' :
+          //     'margin-top--70px'
+          // }
         >
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
@@ -147,11 +147,11 @@ const ChannelDisplaySpace = props => {
       >
         <Row
           id="channel-display-space"
-          className={
-            props.areSearchResultsDisplayed ?
-              '' :
-              'margin-top--70px'
-          }
+          // className={
+          //   props.areSearchResultsDisplayed ?
+          //     '' :
+          //     'margin-top--70px'
+          // }
         >
           {
             props.activeChannels[0].channel ?
@@ -268,11 +268,11 @@ const ChannelDisplaySpace = props => {
       >
         <Row
           id="channel-display-space"
-          className={
-            props.areSearchResultsDisplayed ?
-              '' :
-              'margin-top--70px'
-          }
+          // className={
+          //   props.areSearchResultsDisplayed ?
+          //     '' :
+          //     'margin-top--70px'
+          // }
         >
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {

@@ -16,6 +16,7 @@
 
 #search-result-wrapper.show-results {
   height: 275px;
+  /* overflow: visible; */
 }
 
 #hide-results-button {
@@ -60,10 +61,6 @@
   text-align: center;
 }
 
-button[disabled] + .tooltip {
-  display: none !important;
-}
-
 .image-cropper {
   width: 80%;
   height: 60px;
@@ -93,7 +90,7 @@ button[disabled] + .tooltip {
 
 @media (min-width: 768px) {
   #search-result-wrapper.show-results {
-    height: 120px;
+    height: 154px;
   }
 }
 

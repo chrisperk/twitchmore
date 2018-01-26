@@ -25,7 +25,7 @@ const MyNavbar = props => {
             )
           }>
             <FormGroup>
-              <ControlLabel>Search by:&nbsp;</ControlLabel>
+              <ControlLabel>Search for:&nbsp;</ControlLabel>
               <FormControl
                 componentClass="select"
                 placeholder="Game"
