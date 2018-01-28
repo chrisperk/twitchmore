@@ -79,7 +79,7 @@ const ActiveChannelsList = props => {
                   }
                   if (!activeChannel.channel) {
                     return (
-                      <Col xs={3} sm={12} className="active-channel-wrapper">
+                      <Col xs={3} sm={12} className="panel-body-wrapper">
                         <ListGroupItem
                           className="active-channel"
                           key={activeChannel._id}
