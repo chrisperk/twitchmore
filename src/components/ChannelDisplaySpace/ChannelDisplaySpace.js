@@ -26,7 +26,7 @@ const ChannelDisplaySpace = props => {
                     <i className="fa fa-times" />
                   </div>
                   <iframe
-                    src={`https://player.twitch.tv/?channel=${activeChannel.channel.display_name}&muted=true&autoplay=true`}
+                    src={`https://player.twitch.tv/?channel=${activeChannel.channel.display_name}&muted=true&autoplay=true&playsinline=true`}
                     height={props.areSearchResultsDisplayed ?
                       window.innerHeight - 186 + 'px' :
                       window.innerHeight - 50 + 'px'}
@@ -34,7 +34,6 @@ const ChannelDisplaySpace = props => {
                     frameBorder="0"
                     scrolling="no"
                     allowFullScreen="true"
-                    inline="true"
                   />
                 </Col>
               );
