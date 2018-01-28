@@ -106,9 +106,12 @@ const ActiveChannelsList = props => {
               </Row>
             </ListGroup>
           </Panel.Body>
-        </Panel>        
+        </Panel>
       </Col>
-      <div id="show-list-wrapper">
+      <div
+        id="show-list-wrapper"
+        className={props.hideList && props.activeChannels.length > 0 ? 'show' : ''}
+      >
         <Button
           bsStyle="info"
           id="show-list-button"

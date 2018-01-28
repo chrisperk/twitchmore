@@ -1,5 +1,22 @@
 @media (max-width: 767px) {
   #active-channels-wrapper {
+    /* height: calc(100vh - 52px);
+    position: absolute;
+    top: 0;
+    left: 90%; */
+    height: 0;
+    min-height: 0;
+    overflow: hidden;
+    /* -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); */
+    -webkit-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+    z-index: 2;
+  }
+
+  #active-channels-wrapper {
     padding: 0;
     margin-top: 5px;
   }
@@ -10,7 +27,6 @@
   }
 
   #active-channels-wrapper.show-list {
-    width: 100%;
     height: 220px;
   }
 
@@ -28,23 +44,41 @@
   }
 }
 
-#active-channels-wrapper {
-  /* height: calc(100vh - 52px);
-  position: absolute;
-  top: 0;
-  left: 90%; */
-  height: 0;
-  min-height: 0;
-  width: 0;
-  overflow: hidden;
-  /* -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0); */
-  -webkit-transition: all 1s ease 0s;
-  -o-transition: all 1s ease 0s;
-  transition: all 1s ease 0s;
-  z-index: 2;
+@media (min-width: 768px) {
+  #active-channels-wrapper {
+    height: calc(100vh - 52px);
+    position: absolute;
+    left: 90%;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: 1s ease all;
+    -o-transition: 1s ease all;
+    transition: 1s ease all;
+    z-index: 2;
+  }
+
+  #active-channels-wrapper.hide-list {
+    -webkit-transform: translateX(60%);
+    transform: translateX(60%);
+  }
+
+  #active-channels-wrapper.show-list {
+    -webkit-transform: translateX(-40%);
+    transform: translateX(-40%);
+  }
+
+  #show-list-wrapper {
+    top: 200px;
+  }
+
+  #active-channels-list {
+    height: calc(100vh - 64px);
+    overflow: auto;
+  }
 }
+
+
 
 /* #active-channels-wrapper.show-list {
   width: 100%;
@@ -54,13 +88,21 @@
 #show-list-wrapper {
   position: absolute;
   /* top: 100px; */
-  float: left;
+  right: 0;
   z-index: 2;
   margin-top: 70px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease 1s;
+  -o-transition: opacity 0.5s ease 1s;
+  transition: opacity 0.5s ease 1s;
+}
+
+#show-list-wrapper.show {
+  opacity: 1;
 }
 
 #show-list-button {
-  border-radius: 0 25px 25px 0;
+  border-radius: 25px 0 0 25px;
   z-index: 2;
   opacity: 0.4;
   -webkit-transition: opacity 0.5s ease 0s;

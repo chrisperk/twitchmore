@@ -90,7 +90,23 @@
 
 @media (min-width: 768px) {
   #search-result-wrapper.show-results {
-    height: 154px;
+    height: 120px;
+  }
+
+  .hide-results-wrapper {
+    position: absolute;
+    top: 172px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease 0s;
+  }
+
+  .hide-results-wrapper.show {
+    opacity: 0.4;
+  }
+
+  .hide-results-wrapper.show:hover {
+    opacity: 1;
   }
 }
 

@@ -15,11 +15,6 @@ const ChannelDisplaySpace = props => {
       >
         <Row
           id="channel-display-space"
-          // className={
-          //   props.areSearchResultsDisplayed ?
-          //     '' :
-          //     'margin-top--70px'
-          // }
         >
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
@@ -81,11 +76,6 @@ const ChannelDisplaySpace = props => {
       >
         <Row
           id="channel-display-space"
-          // className={
-          //   props.areSearchResultsDisplayed ?
-          //     '' :
-          //     'margin-top--70px'
-          // }
         >
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
@@ -147,11 +137,6 @@ const ChannelDisplaySpace = props => {
       >
         <Row
           id="channel-display-space"
-          // className={
-          //   props.areSearchResultsDisplayed ?
-          //     '' :
-          //     'margin-top--70px'
-          // }
         >
           {
             props.activeChannels[0].channel ?
@@ -167,7 +152,7 @@ const ChannelDisplaySpace = props => {
                   allowFullScreen="true"
                 />
                 <div className="close-channel-button" onClick={event =>
-                  props.handleUnselectChannel(props, props.activeChannels, event)
+                  props.handleUnselectChannel(props.activeChannels[0], props.activeChannels, event)
                 }>
                   <i className="fa fa-times" />
                 </div>
@@ -201,7 +186,9 @@ const ChannelDisplaySpace = props => {
                   scrolling="no"
                   allowFullScreen="true"
                 />
-                <div className="close-channel-button">
+                <div className="close-channel-button" onClick={event =>
+                  props.handleUnselectChannel(props.activeChannels[1], props.activeChannels, event)
+                }>
                   <i className="fa fa-times" />
                 </div>
               </Col> :
@@ -234,7 +221,9 @@ const ChannelDisplaySpace = props => {
                   scrolling="no"
                   allowFullScreen="true"
                 />
-                <div className="close-channel-button">
+                <div className="close-channel-button" onClick={event =>
+                  props.handleUnselectChannel(props.activeChannels[2], props.activeChannels, event)
+                }>
                   <i className="fa fa-times" />
                 </div>
               </Col> :
@@ -268,11 +257,6 @@ const ChannelDisplaySpace = props => {
       >
         <Row
           id="channel-display-space"
-          // className={
-          //   props.areSearchResultsDisplayed ?
-          //     '' :
-          //     'margin-top--70px'
-          // }
         >
           {props.activeChannels.map(activeChannel => {
             if (activeChannel.channel) {
@@ -288,7 +272,9 @@ const ChannelDisplaySpace = props => {
                     scrolling="no"
                     allowFullScreen="true"
                   />
-                  <div className="close-channel-button">
+                  <div className="close-channel-button" onClick={event =>
+                    props.handleUnselectChannel(activeChannel, props.activeChannels, event)
+                  }>
                     <i className="fa fa-times" />
                   </div>
                 </Col>

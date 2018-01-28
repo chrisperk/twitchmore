@@ -1,13 +1,16 @@
+#channel-display-wrapper {
+  transition: width 1s;
+  -webkit-transition: width 1s;
+}
+
 #channel-display-space {
   height: calc(100vh - 52px);
-  transition: margin-top 1s;
-  -webkit-transition: margin-top 1s;
 }
 
 .close-channel-button {
   position: absolute;
-  top: 1%;
-  right: 6%;
+  top: 5px;
+  right: 20px;
   z-index: 2;
   float: right;
   color: #fff;
@@ -23,14 +26,6 @@
 .close-channel-button:hover {
   opacity: 1;
   cursor: pointer;
-}
-
-.margin-top-115px {
-  margin-top: 115px;
-}
-
-.margin-top--70px {
-  margin-top: -70px;
 }
 
 /* #channel-display-space {
