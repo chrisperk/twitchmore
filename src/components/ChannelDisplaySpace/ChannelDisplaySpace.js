@@ -34,6 +34,7 @@ const ChannelDisplaySpace = props => {
                     frameBorder="0"
                     scrolling="no"
                     allowFullScreen="true"
+                    inline="true"
                   />
                 </Col>
               );
