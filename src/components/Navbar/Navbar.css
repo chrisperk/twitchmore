@@ -15,18 +15,14 @@
   align-items: center;
 }
 
-/* .container-fluid {
-  height: 100%;
-} */
+      @media (max-width: 767px) {
+        .margin-top-5px {
+          margin-top: 5px;
+        }
+      }
 
-@media (max-width: 767px) {
-  .margin-top-5px {
-    margin-top: 5px;
-  }
-}
-
-@media (min-width: 768px) {
-  .margin-left-5px {
-    margin-left: 5px;
-  }
-}
+      @media (min-width: 768px) {
+        .margin-left-5px {
+          margin-left: 5px;
+        }
+      }

@@ -3,7 +3,6 @@ import {
   Row,
   Grid
 } from 'react-bootstrap';
-import './App.css';
 import SearchResultsContainer from './containers/SearchResultsContainer';
 import ActiveChannelsListContainer from './containers/ActiveChannelsListContainer';
 import ChannelDisplaySpaceContainer from './containers/ChannelDisplaySpaceContainer';

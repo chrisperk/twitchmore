@@ -27,32 +27,3 @@
   opacity: 1;
   cursor: pointer;
 }
-
-/* #channel-display-space {
-  height: calc(100vh - 52px);
-  transition: margin-top 1s;
-  -webkit-transition: margin-top 1s;
-}
-
-.channel-display {
-  display: inline-block;
-}
-
-#channel-display-wrapper {
-  transition: width 1s;
-  -webkit-transition: width 1s;
-}
-
-.close-channel-button {
-  position: absolute;
-  top: 0;
-  left: 99%;
-}
-
-.margin-top-115px {
-  margin-top: 115px;
-}
-
-.margin-top--115px {
-  margin-top: -115px;
-} */
