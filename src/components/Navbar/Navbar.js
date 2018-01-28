@@ -54,7 +54,7 @@ const MyNavbar = props => {
               <Button
                 type="submit"
                 bsStyle="primary"
-                className="margin-left-1px margin-top-5px"
+                className="margin-left-5px"
                 disabled={props.searchText.length === 0}
               >
                 Search

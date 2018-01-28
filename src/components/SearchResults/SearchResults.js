@@ -2,23 +2,21 @@ import React, {PropTypes} from 'react';
 import {
   Col,
   Row,
-  Button,
-  Tooltip,
-  OverlayTrigger
+  Button
 } from 'react-bootstrap';
 import './SearchResults.css';
 
-const nextTenTooltip = (
-  <Tooltip id="next-ten-tooltip">
-    Next Ten Results
-  </Tooltip>
-);
-
-const prevTenTooltip = (
-  <Tooltip id="prev-ten-tooltip">
-    Previous Ten Results
-  </Tooltip>
-);
+// const nextTenTooltip = (
+//   <Tooltip id="next-ten-tooltip">
+//     Next Ten Results
+//   </Tooltip>
+// );
+//
+// const prevTenTooltip = (
+//   <Tooltip id="prev-ten-tooltip">
+//     Previous Ten Results
+//   </Tooltip>
+// );
 
 const SearchResults = props => {
   if (props.lastSearchCriteria === 'game') {
@@ -35,23 +33,19 @@ const SearchResults = props => {
         >
           <Row className="search-results-list">
             <Col xs={2} sm={1} className="prev-cursor-button">
-              <OverlayTrigger
-                placement="top"
-                overlay={prevTenTooltip}
+              <Button
+                id="prev-ten-button"
+                title="Previous Ten Results"
+                className="search-results-button"
+                disabled={props.currentResultsPosition === 0}
+                onClick={
+                  (event) => props.handlePrevTen(
+                    event, props.searchCriteria, props.searchText, props.currentResultsPosition
+                  )
+                }
               >
-                <Button
-                  id="prev-ten-button"
-                  className="search-results-button"
-                  disabled={props.currentResultsPosition === 0}
-                  onClick={
-                    (event) => props.handlePrevTen(
-                      event, props.searchCriteria, props.searchText, props.currentResultsPosition
-                    )
-                  }
-                >
-                  <i className="fa fa-chevron-left fa-3x" />
-                </Button>
-              </OverlayTrigger>
+                <i className="fa fa-chevron-left fa-3x" />
+              </Button>
             </Col>
             {props.searchResults.map(stream => {
               return (
@@ -71,22 +65,18 @@ const SearchResults = props => {
               );
             })}
             <Col xs={2} sm={1} className="next-cursor-button pull-right">
-              <OverlayTrigger
-                placement="top"
-                overlay={nextTenTooltip}
+              <Button
+                id="next-ten-button"
+                title="Next Ten Results"
+                className="search-results-button"
+                onClick={
+                  (event) => props.handleNextTen(
+                    event, props.searchCriteria, props.searchText, props.currentResultsPosition
+                  )
+                }
               >
-                <Button
-                  id="next-ten-button"
-                  className="search-results-button"
-                  onClick={
-                    (event) => props.handleNextTen(
-                      event, props.searchCriteria, props.searchText, props.currentResultsPosition
-                    )
-                  }
-                >
-                  <i className="fa fa-chevron-right fa-3x" />
-                </Button>
-              </OverlayTrigger>
+                <i className="fa fa-chevron-right fa-3x" />
+              </Button>
             </Col>
           </Row>
         </Col>
@@ -121,23 +111,19 @@ const SearchResults = props => {
         >
           <Row className="search-results-list">
             <Col xs={2} sm={1} className="prev-cursor-button">
-              <OverlayTrigger
-                placement="top"
-                overlay={prevTenTooltip}
+              <Button
+                id="prev-ten-button"
+                title="Previous Ten Results"
+                className="search-results-button"
+                disabled={props.currentResultsPosition === 0}
+                onClick={
+                  (event) => props.handlePrevTen(
+                    event, props.searchCriteria, props.searchText, props.currentResultsPosition
+                  )
+                }
               >
-                <Button
-                  id="prev-ten-button"
-                  className="search-results-button"
-                  disabled={props.currentResultsPosition === 0}
-                  onClick={
-                    (event) => props.handlePrevTen(
-                      event, props.searchCriteria, props.searchText, props.currentResultsPosition
-                    )
-                  }
-                >
-                  <i className="fa fa-chevron-left fa-3x" />
-                </Button>
-              </OverlayTrigger>
+                <i className="fa fa-chevron-left fa-3x" />
+              </Button>
             </Col>
             {props.searchResults.map(stream => {
               return (
@@ -157,22 +143,18 @@ const SearchResults = props => {
               );
             })}
             <Col xs={2} sm={1} className="next-cursor-button pull-right">
-              <OverlayTrigger
-                placement="top"
-                overlay={nextTenTooltip}
+              <Button
+                id="next-ten-button"
+                title="Next Ten Results"S
+                className="search-results-button"
+                onClick={
+                  (event) => props.handleNextTen(
+                    event, props.searchCriteria, props.searchText, props.currentResultsPosition
+                  )
+                }
               >
-                <Button
-                  id="next-ten-button"
-                  className="search-results-button"
-                  onClick={
-                    (event) => props.handleNextTen(
-                      event, props.searchCriteria, props.searchText, props.currentResultsPosition
-                    )
-                  }
-                >
-                  <i className="fa fa-chevron-right fa-3x" />
-                </Button>
-              </OverlayTrigger>
+                <i className="fa fa-chevron-right fa-3x" />
+              </Button>
             </Col>
           </Row>
         </Col>

@@ -15,7 +15,7 @@
 }
 
 #search-result-wrapper.show-results {
-  height: 275px;
+  height: 240px;
   /* overflow: visible; */
 }
 
@@ -85,6 +85,14 @@
 
   .next-cursor-button {
     padding-right: 0;
+  }
+
+  .hide-results-wrapper {
+    display: none;
+  }
+
+  .hide-results-wrapper.show {
+    display: block;
   }
 }
 

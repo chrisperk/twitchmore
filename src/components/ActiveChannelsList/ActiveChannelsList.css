@@ -32,7 +32,10 @@
 
   .panel-body-wrapper {
     height: 150px;
-    overflow: hidden;
+  }
+
+  .active-channel {
+    margin-top: 10px;
   }
 
   .no-margin-top {
@@ -114,6 +117,10 @@
   opacity: 1;
 }
 
+#hide-list-wrapper:hover {
+  cursor: pointer;
+}
+
 .panel-body {
   padding: 0 15px;
 }
@@ -137,6 +144,13 @@
   position: relative;
   overflow: hidden;
   border-radius: 8%;
+}
+
+.mid-align {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* #active-channels-wrapper {

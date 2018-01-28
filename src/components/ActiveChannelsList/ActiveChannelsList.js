@@ -5,18 +5,16 @@ import {
   Panel,
   ListGroup,
   ListGroupItem,
-  Button,
-  Tooltip,
-  OverlayTrigger
+  Button
 } from 'react-bootstrap';
 import './ActiveChannelsList.css';
 
 const title = 'Active Channels';
-const hideListTooltip = (
-  <Tooltip id="hide-list-tooltip">
-    Hide Active channels
-  </Tooltip>
-);
+// const hideListTooltip = (
+//   <Tooltip id="hide-list-tooltip">
+//     Hide Active channels
+//   </Tooltip>
+// );
 
 const ActiveChannelsList = props => {
   return (
@@ -40,20 +38,17 @@ const ActiveChannelsList = props => {
                   {title}
                 </Col>
                 <Col xs={4} className="mid-align">
-                  <OverlayTrigger
-                    placement="top"
-                    overlay={hideListTooltip}
+                  <div
+                    id="hide-list-wrapper"
+                    title="Hide List"
+                    className="pull-right"
+                    onClick={event => props.handleHideChannelsList(event)}
                   >
-                    <div
-                      className="pull-right"
-                      onClick={event => props.handleHideChannelsList(event)}
-                    >
-                      <i
-                        className="fa fa-eye-slash pull-right"
-                        id="toggle-active-channels-visibility"
-                      />
-                    </div>
-                  </OverlayTrigger>
+                    <i
+                      className="fa fa-eye-slash pull-right"
+                      id="toggle-active-channels-visibility"
+                    />
+                  </div>
                 </Col>
               </Row>
             </Panel.Title>
