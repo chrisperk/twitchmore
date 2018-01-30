@@ -2,8 +2,7 @@ import React, {PropTypes} from 'react';
 import {
   Col,
   Row,
-  Button,
-  Thumbnail
+  Button
 } from 'react-bootstrap';
 import './SearchResults.css';
 
