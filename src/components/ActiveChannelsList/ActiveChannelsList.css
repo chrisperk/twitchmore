@@ -36,15 +36,28 @@
 
 .active-channel {
   line-height: 0.9;
-  margin-bottom: 1px;
   height: 100%;
+  padding: 2px 5px 5px 5px;
+  overflow: hidden;
+}
+
+.active-channel h3 {
+  text-align: center;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 4%;
+}
+
+.active-channel p {
+  font-size: 0.8em;
 }
 
 .active-channel img {
   display: inline;
   margin: 0 auto;
   height: 100%;
-  width: auto;
+  width: 100%;
 }
 
 .active-channel .image-cropper {
@@ -107,6 +120,7 @@
       @media (min-width: 768px) {
         #active-channels-wrapper {
           height: calc(100vh - 52px);
+          margin-top: 10px;
           position: absolute;
           left: 90%;
           -webkit-transform: translateX(0);
@@ -135,5 +149,23 @@
         #active-channels-list {
           height: calc(100vh - 64px);
           overflow: auto;
+        }
+
+        .active-channel {
+          margin: 10px 0;
+        }
+
+        .active-channel h3 {
+          font-size: 1.4em;
+          margin-top: 0;
+          padding-left: 2%;
+        }
+
+        .active-channel p {
+          font-size: 1em;
+        }
+
+        .active-channel small {
+          font-size: 0.8em;
         }
       }

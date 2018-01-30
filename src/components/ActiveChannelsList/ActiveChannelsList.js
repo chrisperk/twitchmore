@@ -70,7 +70,7 @@ const ActiveChannelsList = props => {
                           <div className="image-cropper">
                             <img src={activeChannel.preview.medium} alt="avatar" />
                           </div>
-                          <p>{activeChannel.channel.display_name}</p>
+                          <h3>{activeChannel.channel.display_name}</h3>
                           <p>{activeChannel.game}</p>
                           <small className="hidden-xs">{activeChannel.channel.status}</small>
                         </ListGroupItem>
@@ -86,9 +86,12 @@ const ActiveChannelsList = props => {
                           onClick={event => props.handleUnselectChannel(activeChannel, event)}
                         >
                           <div className="image-cropper">
-                            <img src={activeChannel.video_banner} alt="avatar" />
+                            <img
+                              src={activeChannel.video_banner || activeChannel.logo}
+                              alt="avatar"
+                            />
                           </div>
-                          <p>{activeChannel.display_name}</p>
+                          <h3>{activeChannel.display_name}</h3>
                           <p>{activeChannel.game}</p>
                           <small className="hidden-xs">{activeChannel.status}</small>
                         </ListGroupItem>

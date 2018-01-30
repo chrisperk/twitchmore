@@ -2,7 +2,8 @@ import React, {PropTypes} from 'react';
 import {
   Col,
   Row,
-  Button
+  Button,
+  Thumbnail
 } from 'react-bootstrap';
 import './SearchResults.css';
 
@@ -59,7 +60,7 @@ const SearchResults = props => {
                   <div className="image-cropper">
                     <img src={stream.preview.medium} alt="avatar" />
                   </div>
-                  <p>{stream.channel.display_name}</p>
+                  <h3>{stream.channel.display_name}</h3>
                   <p>{stream.game}</p>
                 </Col>
               );
@@ -135,9 +136,9 @@ const SearchResults = props => {
                   onClick={event => props.handleSelectStream(stream, event)}
                 >
                   <div className="image-cropper">
-                    <img src={stream.video_banner} alt="avatar" />
+                    <img src={stream.video_banner || stream.logo} alt="avatar" />
                   </div>
-                  <p>{stream.display_name}</p>
+                  <h3>{stream.display_name}</h3>
                   <p>{stream.game}</p>
                 </Col>
               );
